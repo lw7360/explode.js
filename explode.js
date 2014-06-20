@@ -16,12 +16,12 @@ var explode = function(elem) {
     elem.addClass('content');
     var $t = $('.' + id);
 
-    (genClips = function() {
-        
-        var amount = 5;
+        var amount = 4;
         
         var width = $t.width() / amount;
         var height = $t.height() / amount;
+    (genClips = function() {
+        
         
         var totalSquares = Math.pow(amount, 2);
         
@@ -29,9 +29,10 @@ var explode = function(elem) {
         
         var y = 0;
         
+        var i = 0;
         for(var z = 0; z <= (amount*width); z = z+width) { 
-        
-            $('<div class="clipped" style="clip: rect('+y+'px, '+(z+width)+'px, '+(y+height)+'px, '+z+'px)">'+html+'</div>').appendTo($t);
+            $('<div class="clipped" count="' + i + '" style="clip: rect('+y+'px, '+(z+width)+'px, '+(y+height)+'px, '+z+'px)">'+html+'</div>').appendTo($t);
+            i++;
             
             if(z === (amount*width)-width) {
             
@@ -53,16 +54,21 @@ var explode = function(elem) {
     }
     
     elem.css({'visibility' : 'hidden'});   
+                var posit = elem.position();
     
             $('.' + id + ' div:not(.content)').each(function() {
+                var count = parseInt($(this).attr("count"));
+                var h = Math.floor(count/amount) * height;
+                var w = count % amount;
                 $(this).css({
                     'position': 'absolute',
-                    'top': '300',
-                    'left': '0',
+                    // 'top': String(posit.top),
+                    // 'left': String(400)+'px',
+                    // 'left': String(posit.left + w*width)+'px',
+                    'left' : '0',
                     'right': '0',
                     'margin-left': 'auto',
                     'margin-right': 'auto',
-                    '-webkit-transition': '-webkit-transform 1.4s ease-in, background 0.3s ease-in',
                     'transition': 'transform 1.4s ease-in, background 0.3s ease-in'
 
                 })
@@ -77,8 +83,10 @@ var explode = function(elem) {
                 // time is initially zero, also set some random variables. It's higher than the total time for the projectile motion
                 // because we want the squares to go off screen. 
                 var t = 0,
-                    z, r, nx, ny,
+                    z, r, nx,
                     totalt =  15;
+
+                var ny = 0;
                 
                 // The direction can either be left (1), right (-1) or center (0). This is the horizontal direction.
                 var negate = [1, -1, 0],
@@ -108,9 +116,12 @@ var explode = function(elem) {
                             
                     // s = ut + 0.5at^2
                     ny = (uy * t) + (0.5 * (g) * Math.pow(t, 2));
-                    
+                    ny = ny * -1;
+
                     // Apply the positions  
-                    $(self).css({'bottom' : (ny)+'px', 'left' : (nx)+'px'});
+                    $(self).css({'top' : (ny + posit.top + h)+'px',
+                     'left' : (nx)+'px'
+                 });
                     
                     // Increase the time by 0.10
                     t = t + 0.30;
