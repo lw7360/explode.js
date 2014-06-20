@@ -41,6 +41,8 @@ body {
 }
 
 #download {
+    color: white;
+    display: block;
     border-radius: 5px;
     border: 3px solid white;
     width: 130px;
@@ -48,7 +50,14 @@ body {
     padding: 10px;
     background-color: #5a6773;
     cursor: pointer;
+    text-decoration: none;
 }
+
+#download:hover {
+    text-decoration: underline;
+}
+
+#download
 
 #down {
     font-size: 30px;
@@ -63,3 +72,4 @@ body {
 .fa-chevron-down {
         cursor: pointer;
 }
+
