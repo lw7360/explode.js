@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="css/main.css">
+    <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Goudy+Bookletter+1911' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="https://rawgit.com/peachananr/onepage-scroll/master/onepage-scroll.css">
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+</head>
+<body>
+
+    <div class="main">
+        <section class="slate-grey">
+            <div>
+                <div id="first">
+                <div id="bomb">
+                        <i class="fa fa-bomb"></i>
+                </div>
+                    <div class="title unselectable">explode.js</div>
+                    <div class="text unselectable">Explode your DOM.</div>
+                    <div id="download" class="unselectable">Download</div>
+                </div>
+                <div id="down">
+                    
+                <i class="fa fa-chevron-down"></i>
+                </div>
+            </div>
+        </section>
+<!--         <section>Types of Explosions</section>
+        <section>How to Explode</section>
+        <section>Closing Remarks</section> -->
+
+    </div>
+
+
+    <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="./explode.js"></script>
+    <script src="https://rawgit.com/peachananr/onepage-scroll/master/jquery.onepage-scroll.min.js"></script>
+    <script type="text/javascript">
+        $(".main").onepage_scroll();
+        $(".fa-chevron-down").click(function() {$(".main").moveDown();});
+        $("#download").click(function() {window.location.href = "https://github.com/lw7360/"});
+        $(".fa-bomb").click(function() {explode($("#bomb"))});
+        $(".title").click(function() {explode($(".title"))});
+        $(".text").click(function() {explode($(".text"))});
+    </script>
+</body>
+</html>

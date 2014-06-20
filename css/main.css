@@ -1,0 +1,65 @@
+body {
+    /*font-family: 'Goudy Bookletter 1911', serif;*/
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+    font-size: 25px;
+}
+
+
+.fa-bomb {
+    font-size: 100px;
+    cursor: pointer;
+}
+
+.slate-grey {
+    background-color: #708090;
+    color: white;
+}
+
+
+#first {
+    text-align: center; 
+    margin-top: 200px;
+}
+
+.title {
+    font-family: 'Raleway', sans-serif;
+    font-size: 70px;
+    cursor: pointer;
+}
+
+.text {
+    cursor: pointer;
+}
+
+.unselectable {
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+#download {
+    border-radius: 5px;
+    border: 3px solid white;
+    width: 130px;
+    margin: 10px auto;
+    padding: 10px;
+    background-color: #5a6773;
+    cursor: pointer;
+}
+
+#down {
+    font-size: 30px;
+    position: fixed; 
+    opacity: 0.5;
+    color: white;
+    left:0px;
+    bottom:20px;
+    width:100%;
+}
+
+.fa-chevron-down {
+        cursor: pointer;
+}
