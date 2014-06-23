@@ -58,7 +58,7 @@ var explode = function (elem) {
     });
     var posit = elem.position();
 
-    $('.' + id + ' div:not(.content)').each(function () {
+    $('.clipped').each(function () {
         var count = parseInt($(this).attr("count"));
         var h = Math.floor(count / amount) * height;
         var w = count % amount;
@@ -96,7 +96,8 @@ var explode = function (elem) {
             randDeg2 = rand(30, 5);
 
         $(this).css({
-            'transform': 'scale(' + randScale + ') skew(' + randDeg + 'deg) rotateZ(' + randDeg2 + 'deg)',
+            // 'transform': 'scale(' + randScale + ') skew(' + randDeg + 'deg) rotateZ(' + randDeg2 + 'deg)',
+            'transform': 'skew(' + randDeg + 'deg) rotateZ(' + randDeg2 + 'deg)',
         });
 
         z = setInterval(function () {
@@ -133,5 +134,6 @@ var explode = function (elem) {
         }, 30);
 
     });
+    elem.removeClass('content');
     elem.unwrap();
 };
