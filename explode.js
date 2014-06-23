@@ -31,7 +31,7 @@ var explode = function (elem) {
 
         var i = 0;
         for (var z = 0; z <= (amount * width); z = z + width) {
-            $('<div class="clipped" count="' + i + '" style="clip: rect(' + y + 'px, ' + (z + width) + 'px, ' + (y + height) + 'px, ' + z + 'px)">' + html + '</div>').appendTo($t);
+            $('<div class="clipped'+id+'" count="' + i + '" style="clip: rect(' + y + 'px, ' + (z + width) + 'px, ' + (y + height) + 'px, ' + z + 'px)">' + html + '</div>').appendTo($t);
             i++;
 
             if (z === (amount * width) - width) {
@@ -58,7 +58,7 @@ var explode = function (elem) {
     });
     var posit = elem.position();
 
-    $('.clipped').each(function () {
+    $('.clipped'+id).each(function () {
         var count = parseInt($(this).attr("count"));
         var h = Math.floor(count / amount) * height;
         var w = count % amount;
