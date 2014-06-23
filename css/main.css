@@ -5,6 +5,14 @@ body {
     font-size: 25px;
 }
 
+h1 {
+    font-size: 70px
+}
+
+h2 {
+    font-size: 40px;
+}
+
 
 .fa-bomb {
     font-size: 100px;
@@ -45,7 +53,7 @@ body {
     display: block;
     border-radius: 5px;
     border: 3px solid white;
-    width: 130px;
+    width: 150px;
     margin: 10px auto;
     padding: 10px;
     background-color: #5a6773;
