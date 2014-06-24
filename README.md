@@ -1,3 +1,3 @@
 # explode.js
 
-## Explode your DOM.
+## Make your DOM explosive with explode.js.
