@@ -111,14 +111,9 @@ var explode = function (elem) {
             ny = (uy * t) + (0.5 * (g) * Math.pow(t, 2));
             ny = ny * -1;
 
-            $(self).css({
-                'top': (ny + posit.top + h) + 'px',
-                'left': (nx) + 'px'
-            });
-
             t = t + 0.30;
 
-            if (t > totalt) {
+            if (t > totalt || (ny + posit.top + h) > window.innerHeight) {
                 elem.css({
                     'visibility': 'visible'
                 })
@@ -130,6 +125,13 @@ var explode = function (elem) {
 
                 clearInterval(z);
             }
+
+
+            $(self).css({
+                'top': (ny + posit.top + h) + 'px',
+                'left': (nx) + 'px'
+            });
+
 
         }, 30);
 
