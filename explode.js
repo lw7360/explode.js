@@ -125,13 +125,12 @@ var explode = function (elem) {
 
                 clearInterval(z);
             }
-
-
-            $(self).css({
-                'top': (ny + posit.top + h) + 'px',
-                'left': (nx) + 'px'
-            });
-
+            else {
+                $(self).css({
+                    'top': (ny + posit.top + h) + 'px',
+                    'left': (nx) + 'px'
+                });
+            }
 
         }, 30);
 
