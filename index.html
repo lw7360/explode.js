@@ -20,46 +20,62 @@
 
     <div class="main">
         <section class="slate-grey">
-                <div id="first">
-                    <div id="bomb">
-                        <i class="fa fa-bomb"></i>
-                    </div>
-                    <div class="title unselectable"><div id="test">explode.js</div></div>
-                    <div class="text unselectable">Explode your DOM.</div>
-                    <a id="download" href="https://github.com/lw7360/explode.js" class="unselectable">Download</a>
+            <div id="first">
+                <div id="bomb">
+                    <i class="fa fa-bomb"></i>
                 </div>
-                <div id="down">
-
-                    <i class="fa fa-chevron-down"></i>
+                <div class="title">
+                    <div id="test">explode.js</div>
                 </div>
+                <div class="text">Explode your DOM.</div>
+                <a id="download" target="_blank" href="https://github.com/lw7360/explode.js" class="unselectable">Download</a>
+            </div>
+            <div id="down">
+                <i class="fa fa-chevron-down"></i>
+            </div>
         </section>
         <section class="slate-grey">
             <h2>How to Explode</h2>
+            <hr>
             <p>In 3 easy steps.</p>
             <div class="container">
                 <div class="row">
-                    <div class="col-md-4">
+                    <div class="col-sm-4">
                         1. Grab explode.js and jQuery.
                         <pre class="code">
 &lt;script src="./explode.js">&lt;/script>
 &lt;script src="./jquery.js">&lt;/script></pre>
+                        Protip, you can use <a href="http://rawgit.com/">rawgit</a> to include explode.js without downloading it.
+                        <hr>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-sm-4">
                         2. Find something to explode.
                         <pre class="code">
 &lt;div id="explode-me">Explode Me!&lt;/div></pre>
                         <div id="explode-me">
                             Explode Me!
                         </div>
+                        <hr>
                     </div>
-                    <div class="col-md-4">3. Explode it.</div>
+                    <div class="col-sm-4">
+                        3. Explode it.
+                        <pre class="code">
+&lt;script>
+    explode($("#explode-me"));
+&lt;/script></pre>
+                        <button type="button" id="explode-it" class="btn btn-default btn-lg">Explode it.</button>
+                        <hr>
+                    </div>
                 </div>
             </div>
+            Checkout the <a href="https://github.com/lw7360/explode.js">README</a> for tons more ways to explode.
+            <div id="down">
+                <i class="fa fa-chevron-down"></i>
+            </div>
         </section>
-        <section>
-            Last Words
-        </section>
-
+        <!--         <section class="slate-grey">
+            <h2>Closing Remarks</h2>
+        </section> -->
     </div>
 
 
@@ -74,24 +90,20 @@
         $(".fa-bomb").click(function () {
             explode($("#bomb"));
         });
-        $(".title").click(function () {
-            explode($(".title"));
+        $("#explode-it").click(function () {
+            explode($("#explode-me"));
         });
-        $(".text").click(function () {
-            explode($(".text"));
-        });
-        $(function() {
-            setTimeout(function() {
+        $(function () {
+            setTimeout(function () {
                 explode($("#bomb"));
-                setTimeout(function() {
+                setTimeout(function () {
                     explode($(".title"));
-                    setTimeout(function() {
+                    setTimeout(function () {
                         explode($(".text"));
                     }, 500);
                 }, 500);
             }, 500);
         });
-
     </script>
 </body>
 
