@@ -76,6 +76,20 @@ h2 {
 }
 
 .fa-chevron-down {
-        cursor: pointer;
+    cursor: pointer;
 }
 
+.code {
+    color: #708090;
+    text-align: left;
+}
+
+#explode-me {
+    height: 175px;
+    width: 175px;
+    border-radius: 5px;
+    border: 3px solid white;
+    line-height: 175px;
+    width: 50%;
+    margin: 0px auto;
+}
