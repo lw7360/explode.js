@@ -124,8 +124,7 @@ var explode = function (elem) {
 
 
                 clearInterval(z);
-            }
-            else {
+            } else {
                 $(self).css({
                     'top': (ny + posit.top + h) + 'px',
                     'left': (nx) + 'px'

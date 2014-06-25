@@ -41,6 +41,7 @@ h2
 
 .unselectable
 {
+  cursor: default;
   -moz-user-select:0;
   -khtml-user-select:none;
   -webkit-user-select:none;
@@ -93,8 +94,6 @@ h2
 {
   height:123px;
   line-height:123px;
-  width:123px;
-  font-size:19px;
   margin:0 auto;
 }
 
@@ -102,4 +101,19 @@ a
 {
   color:#FFF;
   text-decoration:underline;
+}
+
+#closing 
+{
+  font-size: 22px;
+}
+
+.title2 
+{
+  margin-top: 50px;
+}
+
+.title3 
+{
+  margin-top: 50px;
 }

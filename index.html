@@ -24,10 +24,10 @@
                 <div id="bomb">
                     <i class="fa fa-bomb"></i>
                 </div>
-                <div class="title">
+                <div class="title unselectable">
                     <div id="test">explode.js</div>
                 </div>
-                <div class="text">Explode your DOM.</div>
+                <div class="text unselectable">Explode your DOM.</div>
                 <a id="download" target="_blank" href="https://github.com/lw7360/explode.js" class="unselectable">Download</a>
             </div>
             <div id="down">
@@ -35,9 +35,9 @@
             </div>
         </section>
         <section class="slate-grey">
-            <h2>How to Explode</h2>
+            <h2 class="title2">How to Explode</h2>
             <hr>
-            <p>In 3 easy steps.</p>
+            <h2>In 3 easy steps.</h2>
             <div class="container">
                 <div class="row">
                     <div class="col-sm-4">
@@ -46,7 +46,6 @@
 &lt;script src="./explode.js">&lt;/script>
 &lt;script src="./jquery.js">&lt;/script></pre>
                         Protip, you can use <a href="http://rawgit.com/">rawgit</a> to include explode.js without downloading it.
-                        <hr>
                     </div>
                     <div class="col-sm-4">
                         2. Find something to explode.
@@ -55,7 +54,6 @@
                         <div id="explode-me">
                             Explode Me!
                         </div>
-                        <hr>
                     </div>
                     <div class="col-sm-4">
                         3. Explode it.
@@ -64,26 +62,46 @@
     explode($("#explode-me"));
 &lt;/script></pre>
                         <button type="button" id="explode-it" class="btn btn-default btn-lg">Explode it.</button>
-                        <hr>
                     </div>
                 </div>
             </div>
-            Checkout the <a href="https://github.com/lw7360/explode.js">README</a> for tons more ways to explode.
             <div id="down">
                 <i class="fa fa-chevron-down"></i>
             </div>
         </section>
-        <!--         <section class="slate-grey">
-            <h2>Closing Remarks</h2>
-        </section> -->
+        <section class="slate-grey">
+            <h2 class="title3">Closing Remarks</h2> 
+            <hr>
+            <p id="closing">
+                I made explode.js because I wanted to add explosion effects to one of my projects, <a href="http://larrywu.com/babel/">Babel</a>.
+                <br>There were various tutorials on how to do so online, but I wanted to make it as simple as just calling a function.
+                <br>Currently explode.js doesn't do much more than I needed it to do for my project, i.e. it can explode a div that contains text.
+                <br>However, I do have plans to incorporate more functionality and features in the future.
+            </p>
+            <a id="download" target="_blank" href="https://github.com/lw7360/explode.js" class="unselectable">Download</a>
+
+            <div id="down">
+                Made by <a href="http://larrywu.com">Larry Wu</a>
+            </div>
+        </section>
     </div>
 
 
     <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script src="./explode.js"></script>
+    <script src="./explode.min.js"></script>
     <script src="https://rawgit.com/peachananr/onepage-scroll/master/jquery.onepage-scroll.min.js"></script>
     <script type="text/javascript">
-        $(".main").onepage_scroll();
+        $(".main").onepage_scroll({
+            afterMove: function (index) {
+                if (index === 1) {
+                    explodeAll(0);
+                } else if (index === 2) {
+                    explode($(".title2"));
+                } else if (index === 3) {
+                    explode($(".title3"));
+                }
+            }
+        });
         $(".fa-chevron-down").click(function () {
             $(".main").moveDown();
         });
@@ -93,7 +111,8 @@
         $("#explode-it").click(function () {
             explode($("#explode-me"));
         });
-        $(function () {
+
+        var explodeAll = function (delay) {
             setTimeout(function () {
                 explode($("#bomb"));
                 setTimeout(function () {
@@ -102,7 +121,11 @@
                         explode($(".text"));
                     }, 500);
                 }, 500);
-            }, 500);
+            }, delay);
+        };
+
+        $(function () {
+            explodeAll(500);
         });
     </script>
 </body>
