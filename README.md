@@ -1,6 +1,6 @@
 # [explode.js](http://larrywu.com/explode.js)
 
-## Make your DOM explosive with explode.js. in 3 easy steps
+## Make your DOM explosive.
 
 ### Step 1. Include explode.js and jQuery.
 
